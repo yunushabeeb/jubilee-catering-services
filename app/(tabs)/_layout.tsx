@@ -28,7 +28,7 @@ export default function TabLayout() {
           title: 'Home',
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('../assets/icons/home.png')}
+              source={require('../../assets/icons/home.png')}
               style={{ width: 19, height: 19 }}
               tintColor={color}
             />
@@ -41,7 +41,7 @@ export default function TabLayout() {
           title: 'Menu',
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('../assets/icons/menu.png')}
+              source={require('../../assets/icons/menu.png')}
               style={{ width: 17, height: 19 }}
               tintColor={color}
             />
@@ -54,7 +54,7 @@ export default function TabLayout() {
           title: 'History',
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('../assets/icons/history.png')}
+              source={require('../../assets/icons/history.png')}
               style={{ width: 16, height: 16 }}
               tintColor={color}
             />
@@ -67,7 +67,7 @@ export default function TabLayout() {
           title: 'More',
           tabBarIcon: ({ color }) => (
             <Image
-              source={require('../assets/icons/more.png')}
+              source={require('../../assets/icons/more.png')}
               style={{ width: 31, height: 7 }}
               tintColor={color}
             />
