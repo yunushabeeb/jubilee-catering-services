@@ -1,12 +1,9 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import { HapticTab } from '@/app-example/components/HapticTab';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Tabs } from 'expo-router';
+import { Image, Platform } from 'react-native';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -25,19 +22,58 @@ export default function TabLayout() {
           },
           default: {},
         }),
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('../assets/icons/home.png')}
+              style={{ width: 19, height: 19 }}
+              tintColor={color}
+            />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="menu"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Menu',
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('../assets/icons/menu.png')}
+              style={{ width: 17, height: 19 }}
+              tintColor={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="history"
+        options={{
+          title: 'History',
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('../assets/icons/history.png')}
+              style={{ width: 16, height: 16 }}
+              tintColor={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="more"
+        options={{
+          title: 'More',
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('../assets/icons/more.png')}
+              style={{ width: 31, height: 7 }}
+              tintColor={color}
+            />
+          ),
         }}
       />
     </Tabs>

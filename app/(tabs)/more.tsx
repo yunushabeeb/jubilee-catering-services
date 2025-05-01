@@ -1,10 +1,10 @@
 import Wrapper from '@/components/Wrapper';
 import { Text } from 'react-native';
 
-export default function Index() {
+export default function More() {
   return (
     <Wrapper>
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text className="font-bold">More</Text>
     </Wrapper>
   );
 }
