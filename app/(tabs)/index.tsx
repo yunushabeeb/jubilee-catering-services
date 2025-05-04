@@ -8,28 +8,32 @@ export default function Index() {
   // Sample popular foods
   const foods = [
     {
+      id: 1,
       uri: require('../../assets/images/foods/rice.png'),
       name: 'Rice',
-      price: '#545.00',
+      price: 545.0,
     },
     {
+      id: 2,
       uri: require('../../assets/images/foods/spaghetti.png'),
       name: 'Spaghetti',
-      price: '#785.00',
+      price: 785.0,
     },
   ];
 
   // Sample popular drinks
   const drinks = [
     {
+      id: 1,
       uri: require('../../assets/images/drinks/orange-juice.png'),
-      name: 'Rice',
-      price: '#545.00',
+      name: 'Orange Juice',
+      price: 545.0,
     },
     {
+      id: 2,
       uri: require('../../assets/images/drinks/fruit-juice.png'),
-      name: 'Spaghetti',
-      price: '#785.00',
+      name: 'Fruit Juice',
+      price: 785.0,
     },
   ];
 

@@ -1,7 +1,7 @@
 declare interface Item {
   id: number;
   name: string;
-  uri: string;
+  uri: string | any;
   price: number;
 }
 

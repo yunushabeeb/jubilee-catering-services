@@ -1,18 +1,17 @@
 import { Image } from 'expo-image';
+import { useRouter } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
-const ItemCard = ({
-  uri,
-  name,
-  price,
-}: {
-  uri: any;
-  name: string;
-  price: string;
-}) => {
+const ItemCard = ({ uri, name, price, id }: Item) => {
+  const router = useRouter();
+
+  const handlePress = () => {
+    router.push(`/products/details/${id}`); // Navigate to the details screen with the item's ID
+  };
+
   return (
-    <View>
+    <Pressable onPress={handlePress}>
       <View>
         <Image
           source={uri}
@@ -26,9 +25,9 @@ const ItemCard = ({
       </View>
       <View className="mt-2">
         <Text className="text-[10px] text-[#121212]">{name}</Text>
-        <Text className="text-[10px] text-[#808080]">{price}</Text>
+        <Text className="text-[10px] text-[#808080]">#{price}</Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
