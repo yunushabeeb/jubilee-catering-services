@@ -1,10 +1,12 @@
 import Wrapper from '@/components/Wrapper';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default function History() {
   return (
     <Wrapper>
-      <Text>History</Text>
+      <View className="px-6 py-8">
+        <Text>History</Text>
+      </View>
     </Wrapper>
   );
 }

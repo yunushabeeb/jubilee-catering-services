@@ -1,7 +1,8 @@
-interface Item {
+declare interface Item {
+  id: number;
   name: string;
   uri: string;
-  price: string;
+  price: number;
 }
 
 declare interface itemContainerProps {

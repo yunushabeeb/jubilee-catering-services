@@ -36,7 +36,7 @@ export default function Index() {
   return (
     <Wrapper>
       <View className="px-6 py-8">
-        <HomeHeader />
+        <HomeHeader home />
         <View className="mt-8">
           <View className="mb-6">
             <HomeHero uri={require('../../assets/images/hero.png')} />

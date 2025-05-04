@@ -1,10 +1,12 @@
 import Wrapper from '@/components/Wrapper';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default function More() {
   return (
     <Wrapper>
-      <Text className="font-bold">More</Text>
+      <View className="px-6 py-8">
+        <Text className="font-bold">More</Text>
+      </View>
     </Wrapper>
   );
 }

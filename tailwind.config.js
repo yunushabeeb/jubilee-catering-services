@@ -8,6 +8,11 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'], // Default font
         rubik: ['Rubik', 'sans-serif'], // Class-based font
       },
+      colors: {
+        primary: '#FBBC05',
+        secondary: '#EFEAEA',
+        tertiary: '#808080',
+      },
     },
   },
   plugins: [],

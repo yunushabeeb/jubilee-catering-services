@@ -1,46 +1,28 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { Image } from 'expo-image';
+import { clsx } from 'clsx';
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { View } from 'react-native';
+import QuickButtons from './QuickButtons';
+import ScreenTitle from './ScreenTitle';
+import Search from './Search';
 
-const HomeHeader = () => {
+const HomeHeader = ({ home, title }: { home?: boolean; title?: string }) => {
   return (
-    <View className="flex-row items-center gap-4">
-      <View className="flex-1 relative">
-        {/* The search input */}
-        <TextInput
-          placeholder="Search foods"
-          className="bg-white px-6 my-2 rounded-lg border border-[#181818] pl-10 pr-10 text-sm font-rubik"
-        />
-        {/* The search icon */}
-        <Ionicons
-          name="search"
-          size={16}
-          color="#808080"
-          className="absolute top-1/2 left-3 -translate-y-1/2"
-        />
-        {/* The filter icon */}
-        <Ionicons
-          name="list-outline"
-          size={16}
-          color="#808080"
-          className="absolute top-1/2 right-3 -translate-y-1/2"
-        />
+    <View>
+      <View
+        className={clsx('flex-row items-center gap-4', title ? 'mb-6' : '')}
+      >
+        {/* Show screen title if not on home screen */}
+        {title && <ScreenTitle title="Menu" />}
+
+        {/* Show search bar if on home screen  */}
+        {home && <Search />}
+
+        {/* Quick buttons */}
+        <QuickButtons />
       </View>
 
-      {/* Contact icon */}
-      <Image
-        source={require('../assets/icons/phone.png')}
-        alt="Call"
-        style={{ width: 24, height: 24 }}
-      />
-
-      {/* Cart Icon */}
-      <Image
-        source={require('../assets/icons/cart.png')}
-        alt="Call"
-        style={{ width: 24, height: 24 }}
-      />
+      {/* Full search on all screen except home */}
+      {!home && <Search />}
     </View>
   );
 };
