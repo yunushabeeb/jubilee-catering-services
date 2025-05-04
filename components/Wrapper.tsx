@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
@@ -9,17 +9,22 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
   const insets = useSafeAreaInsets();
 
   return (
-    <View
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
-      className="flex-1 bg-white"
+    <ScrollView
+      contentContainerStyle={{ flexGrow: 1 }}
+      showsVerticalScrollIndicator={false}
     >
-      <View>{children}</View>
-    </View>
+      <View
+        style={{
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        }}
+        className="flex-1 bg-[#F3F3F3]"
+      >
+        <View>{children}</View>
+      </View>
+    </ScrollView>
   );
 };
 
