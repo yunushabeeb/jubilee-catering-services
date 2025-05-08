@@ -5,7 +5,7 @@ import {
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 
-const Wrapper = ({ children }: { children: ReactNode }) => {
+export const Wrapper = ({ children }: { children: ReactNode }) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -28,10 +28,10 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default function App({ children }: { children: ReactNode }) {
+export const WrapperContainer = ({ children }: { children: ReactNode }) => {
   return (
     <SafeAreaProvider>
       <Wrapper>{children}</Wrapper>
     </SafeAreaProvider>
   );
-}
+};

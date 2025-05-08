@@ -1,13 +1,13 @@
 import HomeHeader from '@/components/HomeHeader';
 import HomeHero from '@/components/HomeHero';
 import ItemContainer from '@/components/ItemContainer';
-import Wrapper from '@/components/Wrapper';
+import { WrapperContainer } from '@/components/Wrapper';
 import { store } from '@/constants/data';
 import { View } from 'react-native';
 
 export default function Index() {
   return (
-    <Wrapper>
+    <WrapperContainer>
       <View className="px-6 py-8">
         <HomeHeader home />
         <View className="mt-8">
@@ -40,6 +40,6 @@ export default function Index() {
           </View>
         </View>
       </View>
-    </Wrapper>
+    </WrapperContainer>
   );
 }

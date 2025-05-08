@@ -2,7 +2,7 @@ import HomeHeader from '@/components/HomeHeader';
 import MenuFilters from '@/components/MenuFilters';
 import MenuItem from '@/components/MenuItem';
 import MenuTogglers from '@/components/MenuTogglers';
-import Wrapper from '@/components/Wrapper';
+import { WrapperContainer } from '@/components/Wrapper';
 import { store } from '@/constants/data';
 import { useEffect, useState } from 'react';
 import { Dimensions, View } from 'react-native';
@@ -32,7 +32,7 @@ export default function Menu() {
   const height = Dimensions.get('window').height - 210;
 
   return (
-    <Wrapper>
+    <WrapperContainer>
       {/* Header Section */}
       <View className="px-6 py-8">
         <HomeHeader title="Menu" />
@@ -73,6 +73,6 @@ export default function Menu() {
             ))}
         </View>
       </View>
-    </Wrapper>
+    </WrapperContainer>
   );
 }

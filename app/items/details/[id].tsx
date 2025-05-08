@@ -1,38 +1,13 @@
+import { Wrapper } from '@/components/Wrapper';
 import { store } from '@/constants/data';
 import { handleAddToCart, handleRemoveFromCart } from '@/lib/cart';
 import { useCartStore } from '@/store/cart';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Image } from 'expo-image';
 import { Redirect, router, useLocalSearchParams } from 'expo-router';
-import React, { ReactNode, useState } from 'react';
-import { Dimensions, Pressable, ScrollView, Text, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-
-const Wrapper = ({ children }: { children: ReactNode }) => {
-  const insets = useSafeAreaInsets();
-
-  return (
-    <ScrollView
-      contentContainerStyle={{ flexGrow: 1 }}
-      showsVerticalScrollIndicator={false}
-    >
-      <View
-        style={{
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        }}
-        className="flex-1 bg-[#F3F3F3]"
-      >
-        <View>{children}</View>
-      </View>
-    </ScrollView>
-  );
-};
+import React, { useState } from 'react';
+import { Dimensions, Pressable, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const ItemDetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -71,14 +46,18 @@ const ItemDetails = () => {
                   <Ionicons name="arrow-back-outline" size={24} color="red" />
                 </Pressable>
                 <View>
-                  <Ionicons name="cart-outline" size={24} color="red" />
-                  {/* Display a badge with the cart count if the cart is not empty */}
-                  {cartCount > 0 && (
-                    <View className="p-[0.5px] bg-red-500 text-white rounded-full justify-center items-center w-4 h-4 absolute top-0 right-0 -translate-1/2">
-                      <Text className="text-white text-[9px]">{cartCount}</Text>
-                      {/* Display the cart count */}
-                    </View>
-                  )}
+                  <Pressable onPress={() => router.push('/cart')}>
+                    <Ionicons name="cart-outline" size={24} color="red" />
+                    {/* Display a badge with the cart count if the cart is not empty */}
+                    {cartCount > 0 && (
+                      <View className="p-[0.5px] bg-red-500 text-white rounded-full justify-center items-center w-4 h-4 absolute top-0 right-0 -translate-1/2">
+                        <Text className="text-white text-[9px]">
+                          {cartCount}
+                        </Text>
+                        {/* Display the cart count */}
+                      </View>
+                    )}
+                  </Pressable>
                 </View>
               </View>
             </View>
