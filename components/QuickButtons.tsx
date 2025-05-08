@@ -2,20 +2,35 @@ import { useCartStore } from '@/store/cart'; // Importing the cart store to acce
 import { Image } from 'expo-image'; // Importing the Image component from expo-image
 import { router } from 'expo-router';
 import React from 'react'; // Importing React
-import { Pressable, Text, View } from 'react-native'; // Importing Text and View components from react-native
+import { Alert, Linking, Pressable, Text, View } from 'react-native'; // Importing Text and View components from react-native
 
 const QuickButtons = () => {
   // Accessing the cart count from the cart store
   const cartCount = useCartStore((state) => state.cart.length);
 
+  const phoneNumber = '09036379644'; // Change to your desired number
+
+  const handleCallPress = async () => {
+    const url = `tel:${phoneNumber}`;
+    const supported = await Linking.canOpenURL(url);
+
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      Alert.alert('Error', 'Unable to open the phone dialer.');
+    }
+  };
+
   return (
     <>
       {/* Contact icon */}
-      <Image
-        source={require('../assets/icons/phone.png')} // Path to the phone icon image
-        alt="Call" // Accessibility alt text for the image
-        style={{ width: 24, height: 24 }} // Styling the image with width and height
-      />
+      <Pressable onPress={handleCallPress}>
+        <Image
+          source={require('../assets/icons/phone.png')} // Path to the phone icon image
+          alt="Call" // Accessibility alt text for the image
+          style={{ width: 24, height: 24 }} // Styling the image with width and height
+        />
+      </Pressable>
 
       {/* Cart Icon */}
       <View className="relative">
