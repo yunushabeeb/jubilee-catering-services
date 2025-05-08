@@ -86,6 +86,12 @@ const ItemDetails = () => {
                 </Text>
               </View>
 
+              {/* Price Calculation */}
+              <View className="mt-5 text-[#121212] flex-row items-center gap-2">
+                <Text className="font-medium text-lg">Price:</Text>
+                <Text className="text-lg"># {item.price.toFixed(2)}</Text>
+              </View>
+
               {/* Quantity Selection */}
               <View className="mt-5 text-base text-[#121212] flex-row items-center gap-2">
                 <Text>Quantity:</Text>
@@ -105,7 +111,7 @@ const ItemDetails = () => {
 
               {/* Price Calculation */}
               <View className="mt-5 text-[#121212] flex-row items-center gap-2">
-                <Text className="font-medium text-lg">Price:</Text>
+                <Text className="font-medium text-lg">Total Price:</Text>
                 <Text className="text-lg">
                   # {(item.price * quantity).toFixed(2)}
                 </Text>

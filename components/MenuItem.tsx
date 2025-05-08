@@ -1,6 +1,7 @@
 import { handleAddToCart, handleRemoveFromCart } from '@/lib/cart';
 import { useCartStore } from '@/store/cart'; // Importing the cart store for state management
 import Ionicons from '@expo/vector-icons/Ionicons'; // Importing Ionicons for icons
+import { Link } from 'expo-router';
 import React from 'react';
 import { Pressable, Text, View } from 'react-native'; // Importing React Native components
 
@@ -11,10 +12,12 @@ function MenuItem({ each }: { each: Item }) {
   return (
     <View className="border-b border-[#EBEBEB] py-1.5 flex-row justify-between items-center">
       {/* Displaying the item's name and price */}
-      <View>
-        <Text className="text-sm text-[#121212]">{each.name}</Text>
-        <Text className="text-[12px] text-tertiary">{each.price}</Text>
-      </View>
+      <Link href={`/items/details/${each.name}`}>
+        <View>
+          <Text className="text-sm text-[#121212]">{each.name}</Text>
+          <Text className="text-[12px] text-tertiary">{each.price}</Text>
+        </View>
+      </Link>
 
       {/* Displaying the add or remove button based on whether the item is in the cart */}
       <View className="rounded-full bg-secondary w-7 h-7 justify-center items-center">
