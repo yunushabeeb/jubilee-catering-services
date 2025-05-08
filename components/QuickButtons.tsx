@@ -26,7 +26,7 @@ const QuickButtons = () => {
         {/* Display a badge with the cart count if the cart is not empty */}
         {cartCount > 0 && (
           <View className="p-[0.5px] bg-red-500 text-white rounded-full justify-center items-center w-4 h-4 absolute top-0 right-0 -translate-1/2">
-            <Text className="text-white text-[9px]">{cartCount}</Text>{' '}
+            <Text className="text-white text-[9px]">{cartCount}</Text>
             {/* Display the cart count */}
           </View>
         )}

@@ -3,6 +3,8 @@ declare interface Item {
   name: string;
   uri: string | any;
   price: number;
+  category: string;
+  department: 'drink' | 'food';
 }
 
 declare interface itemContainerProps {

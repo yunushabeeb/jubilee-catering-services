@@ -1,3 +1,4 @@
+import { handleAddToCart, handleRemoveFromCart } from '@/lib/cart';
 import { useCartStore } from '@/store/cart'; // Importing the cart store for state management
 import Ionicons from '@expo/vector-icons/Ionicons'; // Importing Ionicons for icons
 import React from 'react';
@@ -6,18 +7,6 @@ import { Pressable, Text, View } from 'react-native'; // Importing React Native 
 // MenuItem component to display individual menu items and handle cart interactions
 function MenuItem({ each }: { each: Item }) {
   const cart = useCartStore((state) => state.cart); // Accessing the cart state from the store
-
-  // Function to handle adding an item to the cart
-  const handleAddToCart = (newData: Item) => {
-    const { addToCart } = useCartStore.getState(); // Accessing the addToCart function from the store
-    addToCart(newData); // Adding the item to the cart
-  };
-
-  // Function to handle removing an item from the cart
-  const handleRemoveFromCart = ({ id, name }: { id: number; name: string }) => {
-    const { removeFromCart } = useCartStore.getState(); // Accessing the removeFromCart function from the store
-    removeFromCart({ id, name }); // Removing the item from the cart
-  };
 
   return (
     <View className="border-b border-[#EBEBEB] py-1.5 flex-row justify-between items-center">

@@ -7,7 +7,7 @@ const ItemCard = ({ uri, name, price, id }: Item) => {
   const router = useRouter();
 
   const handlePress = () => {
-    router.push(`/products/details/${id}`); // Navigate to the details screen with the item's ID
+    router.push(`/items/details/${name}`); // Navigate to the details screen with the item's ID
   };
 
   return (

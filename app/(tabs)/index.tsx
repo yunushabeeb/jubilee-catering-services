@@ -2,41 +2,10 @@ import HomeHeader from '@/components/HomeHeader';
 import HomeHero from '@/components/HomeHero';
 import ItemContainer from '@/components/ItemContainer';
 import Wrapper from '@/components/Wrapper';
+import { store } from '@/constants/data';
 import { View } from 'react-native';
 
 export default function Index() {
-  // Sample popular foods
-  const foods = [
-    {
-      id: 1,
-      uri: require('../../assets/images/foods/rice.png'),
-      name: 'Rice',
-      price: 545.0,
-    },
-    {
-      id: 2,
-      uri: require('../../assets/images/foods/spaghetti.png'),
-      name: 'Spaghetti',
-      price: 785.0,
-    },
-  ];
-
-  // Sample popular drinks
-  const drinks = [
-    {
-      id: 1,
-      uri: require('../../assets/images/drinks/orange-juice.png'),
-      name: 'Orange Juice',
-      price: 545.0,
-    },
-    {
-      id: 2,
-      uri: require('../../assets/images/drinks/fruit-juice.png'),
-      name: 'Fruit Juice',
-      price: 785.0,
-    },
-  ];
-
   return (
     <Wrapper>
       <View className="px-6 py-8">
@@ -47,10 +16,24 @@ export default function Index() {
           </View>
           <View className="gap-6">
             {/* List of popular foods */}
-            <ItemContainer title="Most Popular Food" data={foods} />
+            <ItemContainer
+              title="Most Popular Food"
+              data={
+                store
+                  .filter((food) => food.department === 'food')
+                  .slice(0, 2) as Item[]
+              }
+            />
 
             {/* List of popular drinks */}
-            <ItemContainer title="Most Popular Drink" data={drinks} />
+            <ItemContainer
+              title="Most Popular Drink"
+              data={
+                store
+                  .filter((drink) => drink.department === 'drink')
+                  .slice(0, 2) as Item[]
+              }
+            />
 
             {/* Banner */}
             <HomeHero uri={require('../../assets/images/banner.png')} />

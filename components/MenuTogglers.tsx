@@ -35,22 +35,22 @@ const MenuTogglers = ({
   selectedMenu, // Currently selected menu ('foods' or 'drinks')
   handleMenuChange, // Function to handle menu change
 }: {
-  selectedMenu: 'foods' | 'drinks';
-  handleMenuChange: (menu: 'foods' | 'drinks') => void;
+  selectedMenu: 'food' | 'drink';
+  handleMenuChange: (menu: 'food' | 'drink') => void;
 }) => {
   return (
     <View className="flex-row gap-2.5 mx-auto">
       {/* Container for the buttons */}
       <Button
         variant="secondary" // Optional variant prop
-        active={selectedMenu === 'foods'} // Check if 'foods' is the selected menu
-        onPress={() => handleMenuChange('foods')} // Change menu to 'foods' on press
+        active={selectedMenu === 'food'} // Check if 'foods' is the selected menu
+        onPress={() => handleMenuChange('food')} // Change menu to 'foods' on press
       >
         Foods {/* Label for the 'foods' button */}
       </Button>
       <Button
-        active={selectedMenu === 'drinks'} // Check if 'drinks' is the selected menu
-        onPress={() => handleMenuChange('drinks')} // Change menu to 'drinks' on press
+        active={selectedMenu === 'drink'} // Check if 'drinks' is the selected menu
+        onPress={() => handleMenuChange('drink')} // Change menu to 'drinks' on press
       >
         Drinks {/* Label for the 'drinks' button */}
       </Button>
