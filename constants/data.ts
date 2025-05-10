@@ -2101,3 +2101,86 @@ export const store = [
     ],
   },
 ];
+
+export const users = [
+  {
+    id: 1,
+    name: 'Alice Johnson',
+    email: 'alice.johnson@example.com',
+    phone: '+1234567890',
+    address: '123 Maple St, Springfield, IL',
+    orderHistory: [
+      {
+        orderId: 101,
+        items: [
+          { name: 'Cheeseburger', quantity: 2, price: 5.99 },
+          { name: 'Fries', quantity: 1, price: 2.49 },
+          { name: 'Coca-Cola', quantity: 2, price: 1.01 },
+        ],
+        totalPrice: 9.49,
+        date: '2025-05-01',
+        status: 'Delivered',
+      },
+      {
+        orderId: 102,
+        items: [
+          { name: 'Margherita Pizza', quantity: 1, price: 8.99 },
+          { name: 'Lemonade', quantity: 1, price: 2.49 },
+        ],
+        totalPrice: 11.48,
+        date: '2025-05-04',
+        status: 'Pending',
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: 'Bob Smith',
+    email: 'bob.smith@example.com',
+    phone: '+1987654321',
+    address: '456 Oak Rd, Lincoln, NE',
+    orderHistory: [
+      {
+        orderId: 103,
+        items: [
+          { name: 'Chicken Sandwich', quantity: 1, price: 6.99 },
+          { name: 'French Fries', quantity: 1, price: 2.49 },
+          { name: 'Pepsi', quantity: 1, price: 1.89 },
+        ],
+        totalPrice: 11.37,
+        date: '2025-05-02',
+        status: 'Delivered',
+      },
+      {
+        orderId: 104,
+        items: [
+          { name: 'Spaghetti Bolognese', quantity: 1, price: 9.49 },
+          { name: 'Iced Tea', quantity: 1, price: 2.19 },
+        ],
+        totalPrice: 11.68,
+        date: '2025-05-06',
+        status: 'Cancelled',
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: 'Carla Rivera',
+    email: 'carla.rivera@example.com',
+    phone: '+1098765432',
+    address: '789 Pine Ln, Denver, CO',
+    orderHistory: [
+      {
+        orderId: 105,
+        items: [
+          { name: 'Veggie Burger', quantity: 1, price: 7.99 },
+          { name: 'Sweet Potato Fries', quantity: 1, price: 3.49 },
+          { name: 'Apple Juice', quantity: 1, price: 2.29 },
+        ],
+        totalPrice: 13.77,
+        date: '2025-05-03',
+        status: 'Delivered',
+      },
+    ],
+  },
+];

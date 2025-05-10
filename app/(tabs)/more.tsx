@@ -7,7 +7,7 @@ import { Dimensions, Pressable, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function More() {
-  const height = Dimensions.get('window').height - 270;
+  const height = Dimensions.get('window').height - 220;
   const [darkMode, setDarkMode] = useState(false);
   const [notification, setNotification] = useState(false);
 
@@ -17,8 +17,8 @@ export default function More() {
         <View>
           <View className="relative">
             <View className="relative">
-              <View className="relative h-[250px]">
-                <View className="absolute right-32 bottom-24">
+              <View className="relative h-[200px]">
+                <View className="absolute right-32 bottom-16">
                   <Image
                     source={require('../../assets/images/settings-1.png')}
                     alt="Settings"
